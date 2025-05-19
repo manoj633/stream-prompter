@@ -223,7 +223,6 @@
     animation: fadeIn 1s ease-out;
     position: relative;
     overflow: hidden;
-    background: var(--gradient-light);
     background-size: 300% 300%;
     animation: gradientShift 15s ease infinite alternate, fadeIn 1s ease-out;
 }
@@ -312,24 +311,7 @@
     transition: all 0.3s ease;
 }
 
-.highlight::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background-color: rgba(136, 94, 245, 0.2);
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.5s ease;
-}
 
-.hero:hover .highlight::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
 
 /* Teleprompter Box */
 .teleprompterBox {
@@ -498,7 +480,7 @@
 
 .featureGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(280px, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
     max-width: 1200px;
@@ -951,7 +933,6 @@
     position: relative;
     overflow: hidden;
     margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
     width: 100%;
 }
 
@@ -992,7 +973,6 @@
         align-items: center;
         /* Removed horizontal margins to keep it full width */
         margin-top: var(--spacing-xxl);
-        margin-bottom: var(--spacing-xxl);
     }
 }
 
@@ -1437,12 +1417,64 @@
 }
 
 /* Also remove the related animations since they're no longer needed */
-@keyframes growWidth,
-@keyframes growWidthLeft,
-@keyframes growWidthCenter {
-    /* Empty animations since they won't be used */
+@keyframes growWidth {
+
     from,
     to {
         width: 0;
     }
+}
+
+@keyframes growWidthLeft {
+
+    from,
+    to {
+        width: 0;
+    }
+}
+
+@keyframes growWidthCenter {
+
+    from,
+    to {
+        width: 0;
+    }
+}
+
+
+.poweredBy {
+    display: flex;
+    justify-content: center;
+    height: clamp(3.5rem, 8vw, 5rem);
+    align-items: center;
+    animation: fadeIn 0.8s ease;
+    animation-delay: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.footerLogo:hover {
+    transform: translateY(-3px);
+}
+
+.footerLogo img {
+    width: clamp(20px, 5vw, 24px);
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.footerLogo:hover img {
+    transform: rotate(10deg);
+}
+
+.footerLogo span {
+    font-weight: 600;
+    font-size: clamp(0.8rem, 2vw, 14px);
 }

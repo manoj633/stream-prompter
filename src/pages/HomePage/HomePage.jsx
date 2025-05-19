@@ -166,6 +166,13 @@ const HomePage = () => {
         </form>
       </section>
 
+      <div className={styles.poweredBy}>
+        <div className={styles.footerLogo}>
+          <img src={logoImage} alt="Stream Prompter Logo" />
+          <span>Online Teleprompter by StreamPrompter</span>
+        </div>
+      </div>
+
       <footer className={styles.footer}>
         <p>© StreamPrompter.com | Privacy Policy | Cookies | Terms & Use</p>
       </footer>
