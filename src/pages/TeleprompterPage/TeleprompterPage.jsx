@@ -404,7 +404,7 @@ function TeleprompterPage() {
           contentEditable={!isPlaying}
           onPaste={handleContentPaste}
           onInput={handleContentChange}
-          dangerouslySetInnerHTML={{ __html: content }}
+          dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, "<br>") }}
         ></div>
 
         <div
