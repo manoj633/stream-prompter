@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./BlogDetailsPage.module.css";
 import logoImage from "../../assets/images/logo.png";
-
+import beachHouseImage from "../../assets/images/beach_carnival.png";
 const BlogDetailsPage = () => {
   return (
     <div className={styles.blogDetailsContainer}>
@@ -102,10 +102,7 @@ const BlogDetailsPage = () => {
             thrilling beach carnivals to opulent club nights.
           </p>
 
-          <img
-            src="../assets/home/beach_carnival.png"
-            alt="Teleprompter Setup"
-          />
+          <img src={beachHouseImage} alt="Teleprompter Setup" />
 
           <h2>
             1. Beach Carnival Extravaganza - Where Magic Meets the Shoreline
@@ -125,10 +122,7 @@ const BlogDetailsPage = () => {
             immaculate New Year events in Goa.
           </p>
 
-          <img
-            src="../assets/home/beach_carnival.png"
-            alt="Teleprompter Setup"
-          />
+          <img src={beachHouseImage} alt="Teleprompter Setup" />
 
           <h2>
             2. Love Passion Karma, Candolim - A Sparkling Fusion of Love and Fun
@@ -160,10 +154,7 @@ const BlogDetailsPage = () => {
             in Goa for an unforgettable beginning to the year.
           </p>
 
-          <img
-            src="../assets/home/beach_carnival.png"
-            alt="Teleprompter Setup"
-          />
+          <img src={beachHouseImage} alt="Teleprompter Setup" />
 
           <h2>4. Cafe Mambos - Plunge into the Celebration</h2>
           <p>
