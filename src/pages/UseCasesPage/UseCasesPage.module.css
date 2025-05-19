@@ -1,0 +1,492 @@
+/* UseCasesPage.module.css */
+.useCasesContainer {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.useCasesContainer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+.useCasesContainer {
+    --brand-purple: #7047EB;
+    --brand-purple-dark: #7E69AB;
+    --brand-purple-light: #d6bcfa;
+    --brand-bg-light: #f8f7fd;
+    --text-gray: #666;
+    --border-color: #eee;
+}
+
+.useCasesContainer h1,
+.useCasesContainer h2,
+.useCasesContainer h3 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Alatsi', sans-serif;
+}
+
+.useCasesContainer h1 {
+    font-size: 2.5rem;
+}
+
+.useCasesContainer h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.useCasesContainer h3 {
+    font-size: 1.25rem;
+}
+
+.useCasesContainer p {
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+}
+
+.useCasesContainer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #000000;
+}
+
+.logo img {
+    margin-right: 8px;
+}
+
+.nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin: 0 auto;
+    background: linear-gradient(45deg, rgba(30, 174, 219, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.hero p {
+    max-width: 800px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Buttons */
+.useCasesContainer button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+
+.btnPrimary {
+    background-color: var(--brand-purple);
+    color: white;
+    border-radius: 999px;
+}
+
+.btnPrimary:hover {
+    background-color: var(--brand-purple-dark);
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.featureCard {
+    background-color: #f8fafc;
+    padding: 32px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.featureIcon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    background-color: #e0e7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(16, 24, 40, 0.08);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 1.5rem 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    text-align: left;
+}
+
+.cardHeader img {
+    width: 32px;
+    height: 32px;
+}
+
+.cardHeader h3 {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.cardEmoji {
+    font-size: 24px;
+}
+
+.cardBody {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.cardBody p {
+    font-size: 16px;
+    color: #344054;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Background color variants */
+.purple {
+    background-color: #f4efff;
+    color: #7f56d9;
+}
+
+.blue {
+    background-color: #e0f7ff;
+    color: #1aafff;
+}
+
+.orange {
+    background-color: #fff1e6;
+    color: #f97316;
+}
+
+.green {
+    background-color: #e6fbee;
+    color: #22c55e;
+}
+
+/* Demo Section */
+.demo {
+    padding: 40px 0 80px;
+}
+
+.demo h1,
+.demo h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 48px;
+}
+
+.demoItem {
+    display: flex;
+    margin-bottom: 48px;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+.demoItem:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.demoContent {
+    flex: 1;
+    max-width: 500px;
+}
+
+.demoImage {
+    flex: 1;
+    height: 300px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+.demoContent h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.demoContent p {
+    color: #666;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.demoContent ul {
+    list-style-type: none;
+}
+
+.demoContent li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    color: #666;
+}
+
+.demoContent li::before {
+    content: "•";
+    color: #9b87f5;
+    font-weight: bold;
+    display: inline-block;
+    width: 16px;
+}
+
+/* Testimonials */
+.testimonialSection {
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.testimonialSection h1 {
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #101828;
+}
+
+.testimonialGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.testimonialCard {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06);
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #9ca3af;
+}
+
+.userInfo h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0;
+}
+
+.userRole {
+    font-size: 14px;
+    color: #667085;
+    margin: 0;
+}
+
+.testimonialText {
+    font-size: 15px;
+    color: #475467;
+    line-height: 1.6;
+}
+
+/* Newsletter */
+.signupSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    gap: 60px;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, rgba(30, 174, 219, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.signupText {
+    max-width: 500px;
+}
+
+.signupText h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.signupText p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.formInputGroup {
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.signupForm input[type="email"] {
+    flex: 1;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-right: 18px;
+}
+
+.signupForm button {
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(to right, #6b4eff, #29a8ff);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.signupForm small {
+    font-size: 14px;
+    color: #333;
+}
+
+.poweredBy {
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.footerLogo img {
+    width: 24px;
+    margin-right: 8px;
+}
+
+.footerLogo span {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.footer {
+    padding: 20px;
+    font-size: 13px;
+    text-align: center;
+    background-color: #f9fafb;
+    color: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .signupSection {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .signupForm {
+        align-items: flex-start;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .demoItem {
+        flex-direction: column;
+    }
+
+    .demoItem:nth-child(even) {
+        flex-direction: column;
+    }
+}
