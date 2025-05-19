@@ -17,7 +17,7 @@ function App() {
         <Route path="/teleprompter" element={<TeleprompterPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/use-cases" element={<UseCasesPage />} />
-        <Route path="/bloglist" element={<BlogListPage />} />
+        <Route path="/blog-list" element={<BlogListPage />} />
         <Route path="/blog" element={<BlogDetailsPage />} />
         <Route path="*" element={<div>Page not found</div>} />
       </Routes>

@@ -22,7 +22,7 @@ const BlogListPage = () => {
 
         <nav className={styles.nav}>
           <Link to="/">Features</Link>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog-list">Blog</Link>
           <Link to="/use-cases">Use Cases</Link>
           <Link to="/how-it-works">How It Works</Link>
         </nav>
