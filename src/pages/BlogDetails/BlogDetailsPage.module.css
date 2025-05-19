@@ -1,0 +1,377 @@
+/* BlogDetailsPage.module.css */
+.blogDetailsContainer {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.blogDetailsContainer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+.blogDetailsContainer {
+    --brand-purple: #7047EB;
+    --brand-purple-dark: #7E69AB;
+    --brand-purple-light: #d6bcfa;
+    --brand-bg-light: #f8f7fd;
+    --text-gray: #666;
+    --border-color: #eee;
+}
+
+.blogDetailsContainer h1,
+.blogDetailsContainer h2,
+.blogDetailsContainer h3,
+.blogDetailsContainer h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Alatsi', sans-serif;
+}
+
+.blogDetailsContainer h1 {
+    font-size: 2.5rem;
+}
+
+.blogDetailsContainer h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.blogDetailsContainer h3 {
+    font-size: 1.25rem;
+}
+
+.blogDetailsContainer p {
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+}
+
+.blogDetailsContainer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Buttons */
+.blogDetailsContainer button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+
+.btnPrimary {
+    background-color: var(--brand-purple);
+    color: white;
+    border-radius: 999px;
+}
+
+.btnPrimary:hover {
+    background-color: var(--brand-purple-dark);
+}
+
+.btnOutline {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 999px;
+    background-color: #ffffff;
+}
+
+.btnOutline:hover {
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+}
+
+/* Navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #000000;
+}
+
+.logo img {
+    margin-right: 8px;
+}
+
+.nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin: 0 auto;
+    background: linear-gradient(45deg, rgba(30, 174, 219, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.hero p {
+    max-width: 800px;
+}
+
+.textPurple {
+    color: var(--brand-purple);
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+.navbar .logo {
+    font-size: 1.2rem;
+}
+
+.navbar nav a {
+    margin-left: 1rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.blogHero {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(to bottom, #e9f3fb, #f6f0ff);
+}
+
+.userProfileHeader {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profileLeft {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatarIcon {
+    width: 20px;
+    height: 20px;
+    color: #6b7280;
+}
+
+.profileInfo {
+    margin-left: 12px;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.role {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.profileIcons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.blogHero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.dot {
+    margin: 0 0.5rem;
+}
+
+.blogContent h2 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    color: #222;
+}
+
+.blog {
+    margin-top: 2rem;
+    text-align: justify;
+}
+
+.blog h2 {
+    text-align: left !important;
+}
+
+.blogContent img {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.blogContent p em {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.blogContent ul {
+    padding-left: 1.2rem;
+}
+
+.blogContent ul li {
+    margin-bottom: 0.4rem;
+}
+
+.relatedBlogs {
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.relatedBlogs h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.relatedGrid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.relatedCard {
+    background: #f8f8f8;
+    padding: 1rem;
+    flex: 1 1 calc(33% - 1rem);
+    text-align: center;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.newsletter {
+    background: #f8faff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+.newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
+    padding: 0.6rem;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 0.6rem 1rem;
+    background: #6b5bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.footer {
+    background: #f1f1f1;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 20px;
+    }
+
+    .relatedGrid {
+        flex-direction: column;
+    }
+
+    .relatedCard {
+        flex: 1 1 100%;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
