@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./BlogListPage.module.css";
+import logoImage from "../../assets/images/logo.png";
 
 const BlogListPage = () => {
   const navigate = useNavigate();
@@ -13,12 +14,7 @@ const BlogListPage = () => {
     <div className={styles.blogListContainer}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img
-            src="../assets/home/logo.png"
-            alt="Logo"
-            width="36"
-            height="36"
-          />
+          <img src={logoImage} alt="Logo" width="36" height="36" />
           Stream&nbsp;<strong>Prompter</strong>
         </div>
 

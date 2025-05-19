@@ -1,17 +1,13 @@
 import React from "react";
 import styles from "./HomePage.module.css";
+import logoImage from "../../assets/images/logo.png";
 
 const HomePage = () => {
   return (
     <div className={styles.homePageContainer}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img
-            src="../assets/home/logo.png"
-            alt="Logo"
-            width="36"
-            height="36"
-          />
+          <img src={logoImage} alt="Logo" width="36" height="36" />
           Stream&nbsp;<strong> Prompter</strong>
         </div>
 
