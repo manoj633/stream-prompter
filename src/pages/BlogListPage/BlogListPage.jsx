@@ -1,10 +1,132 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./BlogListPage.module.css";
 import logoImage from "../../assets/images/logo.png";
 
 const BlogListPage = () => {
   const navigate = useNavigate();
+
+  const allArticles = [
+    {
+      title: "How to Create a Professional Website with HTML and CSS",
+      description:
+        "Learn the fundamentals of web development to build your online presence.",
+      date: "May 15, 2025",
+      readTime: "5 min read",
+    },
+    {
+      title: "How to Design a Professional Website with Figma",
+      description: "Master the design process before diving into code.",
+      date: "May 14, 2025",
+      readTime: "6 min read",
+    },
+    {
+      title: "How to Create a Professional Website with WordPress",
+      description: "Build a stunning website without writing code.",
+      date: "May 13, 2025",
+      readTime: "4 min read",
+    },
+    {
+      title: "How to Create a Professional Website with Webflow",
+      description: "Design visually while maintaining developer-level control.",
+      date: "May 12, 2025",
+      readTime: "7 min read",
+    },
+    {
+      title: "How to Create a Professional Website with Squarespace",
+      description: "The all-in-one solution for beautiful websites.",
+      date: "May 11, 2025",
+      readTime: "5 min read",
+    },
+    {
+      title: "How to Build a Professional Website from Scratch",
+      description: "The comprehensive guide to web development.",
+      date: "May 10, 2025",
+      readTime: "10 min read",
+    },
+    {
+      title: "How to Create a Professional Blog in Notion",
+      description: "Turn your Notion workspace into a public-facing blog.",
+      date: "May 9, 2025",
+      readTime: "8 min read",
+    },
+    {
+      title: "How to Create a Professional Blog in Ghost",
+      description:
+        "The platform built specifically for professional publishing.",
+      date: "May 8, 2025",
+      readTime: "6 min read",
+    },
+    {
+      title: "How to Create a Professional Blog in Medium",
+      description: "Reach a built-in audience with minimal setup.",
+      date: "May 7, 2025",
+      readTime: "4 min read",
+    },
+    {
+      title: "How to Create a Professional Website with HTML and CSS",
+      description:
+        "Learn the fundamentals of web development to build your online presence.",
+      date: "May 15, 2025",
+      readTime: "5 min read",
+    },
+    {
+      title: "How to Design a Professional Website with Figma",
+      description: "Master the design process before diving into code.",
+      date: "May 14, 2025",
+      readTime: "6 min read",
+    },
+    {
+      title: "How to Create a Professional Website with WordPress",
+      description: "Build a stunning website without writing code.",
+      date: "May 13, 2025",
+      readTime: "4 min read",
+    },
+    {
+      title: "How to Create a Professional Website with Webflow",
+      description: "Design visually while maintaining developer-level control.",
+      date: "May 12, 2025",
+      readTime: "7 min read",
+    },
+    {
+      title: "How to Create a Professional Website with Squarespace",
+      description: "The all-in-one solution for beautiful websites.",
+      date: "May 11, 2025",
+      readTime: "5 min read",
+    },
+    {
+      title: "How to Build a Professional Website from Scratch",
+      description: "The comprehensive guide to web development.",
+      date: "May 10, 2025",
+      readTime: "10 min read",
+    },
+    {
+      title: "How to Create a Professional Blog in Notion",
+      description: "Turn your Notion workspace into a public-facing blog.",
+      date: "May 9, 2025",
+      readTime: "8 min read",
+    },
+    {
+      title: "How to Create a Professional Blog in Ghost",
+      description:
+        "The platform built specifically for professional publishing.",
+      date: "May 8, 2025",
+      readTime: "6 min read",
+    },
+    {
+      title: "How to Create a Professional Blog in Medium",
+      description: "Reach a built-in audience with minimal setup.",
+      date: "May 7, 2025",
+      readTime: "4 min read",
+    },
+    // Add more articles as needed
+  ];
+
+  const [visibleArticles, setVisibleArticles] = useState(6);
+
+  const handleLoadMore = () => {
+    setVisibleArticles((prevVisibleArticles) => prevVisibleArticles + 6);
+  };
 
   const handleBlogClick = () => {
     navigate("/blog");
@@ -41,128 +163,35 @@ const BlogListPage = () => {
           <h2>Latest Posts</h2>
 
           <div className={styles.postsGrid}>
-            {/* Row 1 */}
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Website with HTML and CSS</h3>
-                <p>
-                  Learn the fundamentals of web development to build your online
-                  presence.
-                </p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 15, 2025</span>
-                  <span className={styles.readTime}>5 min read</span>
+            {allArticles.slice(0, visibleArticles).map((article, index) => (
+              <article
+                key={index}
+                className={styles.postCard}
+                onClick={handleBlogClick}
+              >
+                <div className={styles.postImage}></div>
+                <div className={styles.postContent}>
+                  <h3>{article.title}</h3>
+                  <p>{article.description}</p>
+                  <div className={styles.postMeta}>
+                    <span className={styles.date}>{article.date}</span>
+                    <span className={styles.readTime}>{article.readTime}</span>
+                  </div>
                 </div>
-              </div>
-            </article>
-
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Design a Professional Website with Figma</h3>
-                <p>Master the design process before diving into code.</p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 14, 2025</span>
-                  <span className={styles.readTime}>6 min read</span>
-                </div>
-              </div>
-            </article>
-
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Website with WordPress</h3>
-                <p>Build a stunning website without writing code.</p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 13, 2025</span>
-                  <span className={styles.readTime}>4 min read</span>
-                </div>
-              </div>
-            </article>
-
-            {/* Row 2 */}
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Website with Webflow</h3>
-                <p>
-                  Design visually while maintaining developer-level control.
-                </p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 12, 2025</span>
-                  <span className={styles.readTime}>7 min read</span>
-                </div>
-              </div>
-            </article>
-
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Website with Squarespace</h3>
-                <p>The all-in-one solution for beautiful websites.</p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 11, 2025</span>
-                  <span className={styles.readTime}>5 min read</span>
-                </div>
-              </div>
-            </article>
-
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Build a Professional Website from Scratch</h3>
-                <p>The comprehensive guide to web development.</p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 10, 2025</span>
-                  <span className={styles.readTime}>10 min read</span>
-                </div>
-              </div>
-            </article>
-
-            {/* Row 3 */}
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Blog in Notion</h3>
-                <p>Turn your Notion workspace into a public-facing blog.</p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 9, 2025</span>
-                  <span className={styles.readTime}>8 min read</span>
-                </div>
-              </div>
-            </article>
-
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Blog in Ghost</h3>
-                <p>
-                  The platform built specifically for professional publishing.
-                </p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 8, 2025</span>
-                  <span className={styles.readTime}>6 min read</span>
-                </div>
-              </div>
-            </article>
-
-            <article className={styles.postCard} onClick={handleBlogClick}>
-              <div className={styles.postImage}></div>
-              <div className={styles.postContent}>
-                <h3>How to Create a Professional Blog in Medium</h3>
-                <p>Reach a built-in audience with minimal setup.</p>
-                <div className={styles.postMeta}>
-                  <span className={styles.date}>May 7, 2025</span>
-                  <span className={styles.readTime}>4 min read</span>
-                </div>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
 
-          <div className={styles.loadMore}>
-            <button className={styles.loadMoreButton}>Load More Article</button>
-          </div>
+          {visibleArticles < allArticles.length && (
+            <div className={styles.loadMore}>
+              <button
+                className={styles.loadMoreButton}
+                onClick={handleLoadMore}
+              >
+                Load More Articles
+              </button>
+            </div>
+          )}
         </section>
 
         <section className={styles.signupSection}>
