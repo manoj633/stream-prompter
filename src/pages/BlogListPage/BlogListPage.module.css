@@ -206,6 +206,41 @@
     margin-bottom: 1rem;
 }
 
+.postCard {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06);
+    overflow: hidden;
+    max-width: 300px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.postCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(112, 71, 235, 0.2);
+    /* Purple-tinted shadow */
+    border: 1px solid var(--brand-purple);
+    /* Brand purple border on hover */
+}
+
+
+/* Optional: Add a subtle color change to title on hover */
+.postCard:hover .postContent h3 {
+    color: var(--brand-purple);
+}
+
+/* Optional: Add a subtle scale effect to the image */
+.postCard:hover .postImage {
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+}
+
+
 .postMeta {
     display: flex;
     font-size: 0.8rem;
