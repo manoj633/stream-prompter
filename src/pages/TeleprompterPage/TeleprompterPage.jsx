@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./TeleprompterPage.module.css";
 
 function TeleprompterPage() {
+  const location = useLocation();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [content, setContent] = useState(
-    "sdfg<br />sdwsfgth<br />sadfgth<br />sadfg<br />sentire regenraadfcgth<br />sadfgthyg<br />sadfgthyjg<br />sadfergtfhyjguh<br />asdfgthyjuhk<br />dsfgthgyjukhi<br />sadfrgthyjuhkil<br />sadfgthyjuhkil<br />asfedgrfthyjuhkio<br />adsfedgrfthjgyuhkilo<br />dsfedgrfhtgyjukhil<br />dsfgrhtyjgukhilo"
-  );
+  const [content, setContent] = useState(location.state?.content || "");
   const [alignment, setAlignment] = useState("left");
   const [isFlipX, setIsFlipX] = useState(false);
   const [isFlipY, setIsFlipY] = useState(false);
@@ -75,7 +75,6 @@ function TeleprompterPage() {
     speed,
   ]);
 
-  // New effect for scroll control based on play state and speed
   useEffect(() => {
     if (isPlaying) {
       scroll();
@@ -88,9 +87,6 @@ function TeleprompterPage() {
   const fetchOptions = () => {
     const savedContent = localStorage.getItem("content");
     if (savedContent) {
-      // Uncomment to load saved content
-      // setContent(savedContent);
-
       const savedAlign = localStorage.getItem("align");
       if (savedAlign) setAlignment(savedAlign);
 
@@ -137,7 +133,6 @@ function TeleprompterPage() {
     }
   };
 
-  // Updated scroll function with the working speed control
   const scroll = () => {
     if (isFlipY) {
       window.scrollBy(0, -1);
@@ -165,7 +160,6 @@ function TeleprompterPage() {
       }
     }
 
-    // Using the working speed control formula
     scrollTimeoutRef.current = setTimeout(scroll, 50 - speed);
   };
 

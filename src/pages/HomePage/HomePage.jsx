@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./HomePage.module.css";
 import logoImage from "../../assets/images/logo.png";
 import telepromaImage from "../../assets/images/teleproma.png";
@@ -6,9 +6,16 @@ import settingImage from "../../assets/images/setting.svg";
 import speedImage from "../../assets/images/speed.svg";
 import textImage from "../../assets/images/text.svg";
 import themeImage from "../../assets/images/theme.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const [script, setScript] = useState("");
+  const navigate = useNavigate();
+
+  const handleStreamNow = () => {
+    navigate("/teleprompter", { state: { content: script } });
+  };
+
   return (
     <div className={styles.homePageContainer}>
       <header className={styles.header}>
@@ -36,8 +43,12 @@ const HomePage = () => {
           Seamless Script Reading, Anytime, Anywhere
         </h1>
         <div className={styles.teleprompterBox}>
-          <textarea placeholder="Type in or paste your script here..."></textarea>
-          <button>Stream Now →</button>
+          <textarea
+            placeholder="Type in or paste your script here..."
+            value={script}
+            onChange={(e) => setScript(e.target.value)}
+          ></textarea>
+          <button onClick={handleStreamNow}>Stream Now →</button>
         </div>
       </section>
 
