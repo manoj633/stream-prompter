@@ -26,6 +26,14 @@
     color: #000000;
 }
 
+/* In Header.module.css */
+.logoLink {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
 .logo img {
     margin-right: 8px;
 }

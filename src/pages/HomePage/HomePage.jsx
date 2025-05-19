@@ -6,21 +6,24 @@ import settingImage from "../../assets/images/setting.svg";
 import speedImage from "../../assets/images/speed.svg";
 import textImage from "../../assets/images/text.svg";
 import themeImage from "../../assets/images/theme.svg";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <div className={styles.homePageContainer}>
       <header className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logoImage} alt="Logo" width="36" height="36" />
-          Stream&nbsp;<strong> Prompter</strong>
-        </div>
+        <Link to="/" className={styles.logoLink}>
+          <div className={styles.logo}>
+            <img src={logoImage} alt="Logo" width="36" height="36" />
+            Stream&nbsp;<strong>Prompter</strong>
+          </div>
+        </Link>
 
         <nav className={styles.nav}>
-          <a href="#">Features</a>
-          <a href="#">Blog</a>
-          <a href="#">Use Cases</a>
-          <a href="#">How It Works</a>
+          <Link to="/">Features</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/use-cases">Use Cases</Link>
+          <Link to="/how-it-works">How It Works</Link>
         </nav>
       </header>
 

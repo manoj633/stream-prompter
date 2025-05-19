@@ -2,20 +2,22 @@ import React from "react";
 import styles from "./BlogDetailsPage.module.css";
 import logoImage from "../../assets/images/logo.png";
 import beachHouseImage from "../../assets/images/beach_carnival.png";
+import { Link } from "react-router-dom";
 const BlogDetailsPage = () => {
   return (
     <div className={styles.blogDetailsContainer}>
       <header className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logoImage} alt="Logo" width="36" height="36" />
-          Stream&nbsp;<strong>Prompter</strong>
-        </div>
-
+        <Link to="/" className={styles.logoLink}>
+          <div className={styles.logo}>
+            <img src={logoImage} alt="Logo" width="36" height="36" />
+            Stream&nbsp;<strong>Prompter</strong>
+          </div>
+        </Link>
         <nav className={styles.nav}>
-          <a href="#">Features</a>
-          <a href="#">Blog</a>
-          <a href="#">Use Cases</a>
-          <a href="#">How It Works</a>
+          <Link to="/">Features</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/use-cases">Use Cases</Link>
+          <Link to="/how-it-works">How It Works</Link>
         </nav>
       </header>
 

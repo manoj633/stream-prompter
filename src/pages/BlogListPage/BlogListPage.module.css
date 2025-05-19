@@ -114,6 +114,14 @@
     color: #4b5563;
 }
 
+/* In Header.module.css */
+.logoLink {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
 /* Hero section */
 .hero {
     display: flex;
