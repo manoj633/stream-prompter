@@ -1,10 +1,11 @@
 import React from "react";
-import "./HomePage.css";
+import styles from "./HomePage.module.css";
+
 const HomePage = () => {
   return (
-    <>
-      <header>
-        <div className="logo">
+    <div className={styles.homePageContainer}>
+      <header className={styles.header}>
+        <div className={styles.logo}>
           <img
             src="../assets/home/logo.png"
             alt="Logo"
@@ -14,7 +15,7 @@ const HomePage = () => {
           Stream&nbsp;<strong> Prompter</strong>
         </div>
 
-        <nav>
+        <nav className={styles.nav}>
           <a href="#">Features</a>
           <a href="#">Blog</a>
           <a href="#">Use Cases</a>
@@ -22,27 +23,29 @@ const HomePage = () => {
         </nav>
       </header>
 
-      <section className="hero">
-        <div className="badge">Professional Online Streaming Teleprompter</div>
+      <section className={styles.hero}>
+        <div className={styles.badge}>
+          Professional Online Streaming Teleprompter
+        </div>
         <h1>
-          <span className="highlight">The Online Teleprompter</span> For
+          <span className={styles.highlight}>The Online Teleprompter</span> For
           Seamless Script Reading, Anytime, Anywhere
         </h1>
-        <div className="teleprompter-box">
+        <div className={styles.teleprompterBox}>
           <textarea placeholder="Type in or paste your script here..."></textarea>
           <button>Stream Now →</button>
         </div>
       </section>
 
-      <section className="features section">
+      <section className={`${styles.features} ${styles.section}`}>
         <h2>Designed for Creators</h2>
-        <p className="subtitle">
+        <p className={styles.subtitle}>
           Everything you need for smooth presentations and seamless delivery
         </p>
-        <div className="feature-grid">
-          <div className="feature-card">
-            <div className="svg-circle">
-              <div className="svg-background">
+        <div className={styles.featureGrid}>
+          <div className={styles.featureCard}>
+            <div className={styles.svgCircle}>
+              <div className={styles.svgBackground}>
                 <img
                   src="../assets/home/text.svg"
                   alt="Adjustable Text Size"
@@ -54,9 +57,9 @@ const HomePage = () => {
             <h3>Adjustable Text Size</h3>
             <p>Customize font size for optimal reading from any distance.</p>
           </div>
-          <div className="feature-card">
-            <div className="svg-circle">
-              <div className="svg-background">
+          <div className={styles.featureCard}>
+            <div className={styles.svgCircle}>
+              <div className={styles.svgBackground}>
                 <img
                   src="../assets/home//speed.svg"
                   alt="Flexible Speed Control"
@@ -69,9 +72,9 @@ const HomePage = () => {
             <p>Set your pace with precise scroll speed adjustments.</p>
           </div>
 
-          <div className="feature-card">
-            <div className="svg-circle">
-              <div className="svg-background">
+          <div className={styles.featureCard}>
+            <div className={styles.svgCircle}>
+              <div className={styles.svgBackground}>
                 <img
                   src="../assets/home//setting.svg"
                   alt="Custom Margins"
@@ -84,9 +87,9 @@ const HomePage = () => {
             <p>Adjust text margins to fit your preferred reading style.</p>
           </div>
 
-          <div className="feature-card">
-            <div className="svg-circle">
-              <div className="svg-background">
+          <div className={styles.featureCard}>
+            <div className={styles.svgCircle}>
+              <div className={styles.svgBackground}>
                 <img
                   src="../assets/home//theme.svg"
                   alt="Multiple Themes"
@@ -99,44 +102,45 @@ const HomePage = () => {
             <p>Switch between light, dark, and creative color themes.</p>
           </div>
         </div>
-        <div className="cta">
+        <div className={styles.cta}>
           <a href="#">Try it now →</a>
         </div>
       </section>
 
-      <section className="professional section">
+      <section className={`${styles.professional} ${styles.section}`}>
         <h2>A Professional Teleprompter in your Web Browser</h2>
       </section>
-      <section className="professional-section">
-        <div className="text-content">
+
+      <section className={styles.professionalSection}>
+        <div className={styles.textContent}>
           <h2>Perform With Confidence</h2>
           <p>
             Whether you're recording videos, giving presentations, or practicing
             speeches, OnCueCanvas helps you deliver your message smoothly and
             professionally.
           </p>
-          <ul className="feature-list">
+          <ul className={styles.featureList}>
             <li>No registration or download required</li>
             <li>Works on any device with a web browser</li>
             <li>Completely free to use</li>
             <li>Privacy-focused - your scripts stay on your device</li>
           </ul>
         </div>
-        <div className="image-container">
+        <div className={styles.imageContainer}>
           <img src="../assets/home/teleproma.png" alt="Teleprompter UI" />
         </div>
       </section>
 
-      <section className="signup-section">
-        <div className="signup-text">
+      <section className={styles.signupSection}>
+        <div className={styles.signupText}>
           <h2>Stay in the tech loop.</h2>
           <p>
             Keep up to date with new products, all the goss, and anything else
             you might have missed on twitter.
           </p>
         </div>
-        <form className="signup-form">
-          <div className="form-input-group">
+        <form className={styles.signupForm}>
+          <div className={styles.formInputGroup}>
             <input type="email" placeholder="Enter your email" required />
             <button type="submit">Sign Up</button>
           </div>
@@ -147,10 +151,10 @@ const HomePage = () => {
         </form>
       </section>
 
-      <footer>
+      <footer className={styles.footer}>
         <p>© StreamPrompter.com | Privacy Policy | Cookies | Terms & Use</p>
       </footer>
-    </>
+    </div>
   );
 };
 

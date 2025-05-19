@@ -1,17 +1,17 @@
-* {
+.homePageContainer * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+.homePageContainer {
     font-family: "Inter", sans-serif;
     background-color: #ffffff;
     color: #1a1a1a;
     line-height: 1.6;
 }
 
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,13 +26,11 @@ header {
     color: #000000;
 }
 
-
 .logo img {
     margin-right: 8px;
 }
 
-
-nav a {
+.nav a {
     margin-left: 32px;
     text-decoration: none;
     font-size: 14px;
@@ -54,7 +52,6 @@ nav a {
     text-align: center;
 }
 
-
 .hero {
     text-align: center;
     padding: 30px 20px 80px;
@@ -72,12 +69,11 @@ nav a {
     margin: 0 auto 40px;
 }
 
-.hero h1 .highlight {
+.highlight {
     color: #885EF5;
 }
 
-
-.teleprompter-box {
+.teleprompterBox {
     width: 700px;
     max-width: 90%;
     background-color: #f9fafb;
@@ -88,33 +84,26 @@ nav a {
     margin: 0 auto;
 }
 
-
-.teleprompter-box textarea {
+.teleprompterBox textarea {
     width: 100%;
     height: 250px;
     border: 1px solid #e2e8f0;
-    /* Stroke color */
     border-radius: 8px;
     background: #292929;
-    /* Fill color */
     color: white;
     padding: 16px;
     resize: none;
     font-size: 16px;
     font-family: 'DM San', sans-serif;
-    /* Placeholder font family */
 }
 
-.teleprompter-box textarea::placeholder {
+.teleprompterBox textarea::placeholder {
     font-family: 'DM Sans', sans-serif;
-    /* Placeholder font family */
     font-size: 18px;
-    /* Placeholder font size */
     color: #64748b;
-    /* Placeholder color */
 }
 
-.teleprompter-box button {
+.teleprompterBox button {
     background: linear-gradient(45deg, #885EF5, #23ABDC);
     border: none;
     color: white;
@@ -123,7 +112,6 @@ nav a {
     font-size: 14px;
     cursor: pointer;
 }
-
 
 .section {
     padding: 40px 20px;
@@ -134,7 +122,6 @@ nav a {
     text-align: center;
 }
 
-
 .features h2 {
     font-family: 'Alatsi', sans-serif;
     font-size: 40px;
@@ -142,17 +129,14 @@ nav a {
     letter-spacing: 2px;
 }
 
-.features p.subtitle {
+.subtitle {
     color: #54748b;
-    /* Font color */
     font-family: 'Inter', sans-serif;
-    /* Typography */
     font-size: 18px;
     line-height: 28px;
 }
 
-
-.feature-grid {
+.featureGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -162,7 +146,7 @@ nav a {
     margin-right: auto;
 }
 
-.feature-card {
+.featureCard {
     background: white;
     border-radius: 12px;
     padding: 24px;
@@ -170,20 +154,18 @@ nav a {
     text-align: left;
 }
 
-.svg-circle {
+.svgCircle {
     width: 40px;
     height: 40px;
     background-color: rgba(112, 71, 235, 0.1);
-    /* Background color with 10% opacity */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
-    /* Space between circle and text */
 }
 
-.svg-background {
+.svgBackground {
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -192,25 +174,22 @@ nav a {
     align-items: center;
 }
 
-.feature-card h3 {
+.featureCard h3 {
     font-family: 'Alatsi', sans-serif;
     font-size: 18px;
 }
 
-.feature-card p {
+.featureCard p {
     color: #64748b;
-    /* Font color */
     font-size: 14px;
-    /* Font size */
     font-weight: normal;
-    /* Regular font weight */
 }
 
-.features .cta {
+.cta {
     margin-top: 40px;
 }
 
-.features .cta a {
+.cta a {
     margin-top: 40px;
     color: #7c3aed;
     font-weight: 600;
@@ -229,45 +208,45 @@ nav a {
     font-size: 36px;
 }
 
-.professional-section {
+.professionalSection {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 60px 120px;
 }
 
-.text-content {
+.textContent {
     max-width: 520px;
 }
 
-.text-content h1 {
+.textContent h1 {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 40px;
     line-height: 1.2;
 }
 
-.text-content h2 {
+.textContent h2 {
     font-size: 36px;
     font-weight: 700;
     color: #1a1a3c;
     margin-bottom: 16px;
 }
 
-.text-content p {
+.textContent p {
     font-size: 18px;
     color: #5a6881;
     margin-bottom: 30px;
     line-height: 1.6;
 }
 
-.feature-list {
+.featureList {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.feature-list li {
+.featureList li {
     font-size: 16px;
     color: #1a1a1a;
     margin-bottom: 12px;
@@ -275,7 +254,7 @@ nav a {
     padding-left: 24px;
 }
 
-.feature-list li::before {
+.featureList li::before {
     content: "✓";
     color: #6b4eff;
     font-weight: 600;
@@ -284,7 +263,7 @@ nav a {
     top: 0;
 }
 
-.image-container img {
+.imageContainer img {
     max-width: 600px;
     width: 100%;
     border-radius: 10px;
@@ -297,24 +276,24 @@ nav a {
         padding: 40px 20px;
     }
 
-    .text-content,
-    .image-container img {
+    .textContent,
+    .imageContainer img {
         max-width: 100%;
         text-align: center;
     }
 
-    .text-content h1 {
+    .textContent h1 {
         font-size: 36px;
     }
 }
 
-.confidence-section {
+.confidenceSection {
     padding: 40px 20px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.signup-section {
+.signupSection {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -322,27 +301,26 @@ nav a {
     gap: 60px;
     flex-wrap: wrap;
     background: linear-gradient(45deg, rgba(30, 174, 219, 0.1), rgba(139, 92, 246, 0.1));
-
 }
 
-.signup-text {
+.signupText {
     max-width: 500px;
 }
 
-.signup-text h2 {
+.signupText h2 {
     font-size: 32px;
     font-weight: 700;
     margin: 0 0 16px;
 }
 
-.signup-text p {
+.signupText p {
     font-size: 16px;
     color: #333;
     margin: 0;
     line-height: 1.6;
 }
 
-.signup-form {
+.signupForm {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -350,14 +328,14 @@ nav a {
     width: 100%;
 }
 
-.form-input-group {
+.formInputGroup {
     display: flex;
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.signup-form input[type="email"] {
+.signupForm input[type="email"] {
     flex: 1;
     padding: 16px;
     font-size: 16px;
@@ -367,7 +345,7 @@ nav a {
     margin-right: 18px;
 }
 
-.signup-form button {
+.signupForm button {
     padding: 0 24px;
     font-size: 16px;
     font-weight: 500;
@@ -378,23 +356,23 @@ nav a {
     cursor: pointer;
 }
 
-.signup-form small {
+.signupForm small {
     font-size: 14px;
     color: #333;
 }
 
 @media (max-width: 900px) {
-    .signup-section {
+    .signupSection {
         flex-direction: column;
         padding: 40px 20px;
     }
 
-    .signup-form {
+    .signupForm {
         align-items: flex-start;
     }
 }
 
-footer {
+.footer {
     padding: 20px;
     font-size: 13px;
     text-align: center;
