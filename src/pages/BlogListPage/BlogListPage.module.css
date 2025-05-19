@@ -1,0 +1,381 @@
+/* BlogListPage.module.css */
+.blogListContainer {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.blogListContainer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables inside scope */
+.blogListContainer {
+    --brand-purple: #7047EB;
+    --brand-purple-dark: #7E69AB;
+    --brand-purple-light: #d6bcfa;
+    --brand-bg-light: #f8f7fd;
+    --text-gray: #666;
+    --border-color: #eee;
+}
+
+.blogListContainer h1,
+.blogListContainer h2,
+.blogListContainer h3 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Alatsi', sans-serif;
+}
+
+.blogListContainer h1 {
+    font-size: 2.5rem;
+}
+
+.blogListContainer h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.blogListContainer h3 {
+    font-size: 1.25rem;
+}
+
+.blogListContainer p {
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+}
+
+.blogListContainer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Buttons */
+.button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border: none;
+}
+
+.btnPrimary {
+    background-color: var(--brand-purple);
+    color: white;
+    border-radius: 999px;
+}
+
+.btnPrimary:hover {
+    background-color: var(--brand-purple-dark);
+}
+
+.btnOutline {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 999px;
+    background-color: #ffffff;
+}
+
+.btnOutline:hover {
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+}
+
+/* Navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #000000;
+}
+
+.logo img {
+    margin-right: 8px;
+}
+
+.nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin: 0 auto;
+    background: linear-gradient(45deg, rgba(30, 174, 219, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.hero p {
+    max-width: 700px;
+}
+
+.textPurple {
+    color: var(--brand-purple);
+}
+
+/* Latest posts section */
+.latestPosts {
+    margin-top: 3rem;
+}
+
+.latestPosts h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #111;
+}
+
+.postsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.postCard {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06);
+    overflow: hidden;
+    max-width: 300px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.postCard:hover {
+    transform: translateY(-5px);
+}
+
+.postImage {
+    height: 200px;
+    background-color: #e2e8f0;
+    background-image: url('../assets/home/blog-cover.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.postContent {
+    padding: 1.5rem;
+}
+
+.postContent h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.postContent p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.postMeta {
+    display: flex;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.date {
+    margin-right: 1.5rem;
+}
+
+.loadMore {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.loadMoreButton {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 999px;
+    background-color: #ffffff;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.loadMoreButton:hover {
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+}
+
+/* Newsletter section */
+.signupSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    margin-top: 4rem;
+    gap: 60px;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, rgba(30, 174, 219, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.signupText {
+    max-width: 500px;
+}
+
+.signupText h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    text-align: left;
+}
+
+.signupText p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.formInputGroup {
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.signupForm input[type="email"] {
+    flex: 1;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-right: 18px;
+}
+
+.signupForm button {
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(to right, #6b4eff, #29a8ff);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.signupForm small {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    font-size: 13px;
+    text-align: center;
+    background-color: #f9fafb;
+    color: #6b7280;
+}
+
+.poweredBy {
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.footerLogo img {
+    width: 24px;
+    margin-right: 8px;
+}
+
+.footerLogo span {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .postsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 20px;
+    }
+
+    .postsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .signupSection {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .signupForm {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav a {
+        margin-left: 16px;
+        font-size: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .signupForm input,
+    .signupForm button {
+        font-size: 14px;
+    }
+}
