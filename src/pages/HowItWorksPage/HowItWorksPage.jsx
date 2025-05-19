@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./HowItWorksPage.module.css";
 import logoImage from "../../assets/images/logo.png";
+import clipImage from "../../assets/images/clip.png";
 
 const HowItWorksPage = () => {
   return (
@@ -45,12 +46,7 @@ const HowItWorksPage = () => {
           >
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>
-                <img
-                  src="../assets/home/clip.png"
-                  alt="Script Icon"
-                  width="15"
-                  height="15"
-                />
+                <img src={clipImage} alt="Script Icon" width="15" height="15" />
               </div>
               <div className={styles.featureContent}>
                 <p className={styles.featureStep}>Step 01</p>
@@ -65,12 +61,7 @@ const HowItWorksPage = () => {
 
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>
-                <img
-                  src="../assets/home/clip.png"
-                  alt="Script Icon"
-                  width="15"
-                  height="15"
-                />
+                <img src={clipImage} alt="Script Icon" width="15" height="15" />
               </div>
               <div className={styles.featureContent}>
                 <p className={styles.featureStep}>Step 01</p>
@@ -85,12 +76,7 @@ const HowItWorksPage = () => {
 
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>
-                <img
-                  src="../assets/home/clip.png"
-                  alt="Script Icon"
-                  width="15"
-                  height="15"
-                />
+                <img src={clipImage} alt="Script Icon" width="15" height="15" />
               </div>
               <div className={styles.featureContent}>
                 <p className={styles.featureStep}>Step 01</p>
@@ -105,12 +91,7 @@ const HowItWorksPage = () => {
 
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>
-                <img
-                  src="../assets/home/clip.png"
-                  alt="Script Icon"
-                  width="15"
-                  height="15"
-                />
+                <img src={clipImage} alt="Script Icon" width="15" height="15" />
               </div>
               <div className={styles.featureContent}>
                 <p className={styles.featureStep}>Step 01</p>
