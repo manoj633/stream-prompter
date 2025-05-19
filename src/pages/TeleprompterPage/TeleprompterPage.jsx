@@ -203,7 +203,19 @@ function TeleprompterPage() {
   };
 
   const handleContentChange = (e) => {
-    setContent(e.target.innerHTML);
+    // Get the current text content
+    const textContent = e.target.innerText;
+
+    // Update the content state with the new text content
+    setContent(textContent);
+
+    // Move the cursor to the end of the content
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.selectNodeContents(contentRef.current);
+    range.collapse(false); // Collapse the range to the end
+    selection.removeAllRanges();
+    selection.addRange(range);
   };
 
   return (
@@ -375,36 +387,20 @@ function TeleprompterPage() {
                 Speed: <span id="speed-display">{speed}</span>
               </div>
             </div>
-
-            <div>
-              <form
-                action="https://app.teleprompter.com/recorder"
-                target="_blank"
-              >
-                <input
-                  id="record-content"
-                  type="hidden"
-                  name="content"
-                  value={content}
-                />
-                <button className={styles.recordVideoButton}>
-                  Record Video
-                </button>
-              </form>
-            </div>
           </div>
         </nav>
 
         <div
           className={`${styles.content} 
-            ${isFlipX ? styles.flipx : ""} 
-            ${isFlipY ? styles.flipy : ""}`}
+    ${isFlipX ? styles.flipx : ""} 
+    ${isFlipY ? styles.flipy : ""}`}
           ref={contentRef}
           spellCheck="false"
           contentEditable={!isPlaying}
           onPaste={handleContentPaste}
           onInput={handleContentChange}
           dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, "<br>") }}
+          style={{ direction: "ltr", textAlign: "left" }} // Ensure direction and alignment
         ></div>
 
         <div
