@@ -29,7 +29,7 @@ const HowItWorksPage = () => {
         <section className={styles.hero}>
           <h1>
             Effortless Script Reading,
-            <span className={styles.textPurple}>Made Simple</span>
+            <span className={styles.textPurple}>&nbsp;Made Simple</span>
           </h1>
           <p>
             StreamPrompter transforms the way you deliver spoken content with
