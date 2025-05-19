@@ -185,7 +185,7 @@ const BlogListPage = () => {
 
         <div className={styles.poweredBy}>
           <div className={styles.footerLogo}>
-            <img src="../assets/home/logo.png" alt="Stream Prompter Logo" />
+            <img src={logoImage} alt="Stream Prompter Logo" />
             <span>Online Teleprompter by StreamPrompter</span>
           </div>
         </div>

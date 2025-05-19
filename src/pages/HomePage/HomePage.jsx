@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./HomePage.module.css";
 import logoImage from "../../assets/images/logo.png";
+import telepromaImage from "../../assets/images/teleproma.png";
+import settingImage from "../../assets/images/setting.svg";
+import speedImage from "../../assets/images/speed.svg";
+import textImage from "../../assets/images/text.svg";
+import themeImage from "../../assets/images/theme.svg";
 
 const HomePage = () => {
   return (
@@ -43,7 +48,7 @@ const HomePage = () => {
             <div className={styles.svgCircle}>
               <div className={styles.svgBackground}>
                 <img
-                  src="../assets/home/text.svg"
+                  src={textImage}
                   alt="Adjustable Text Size"
                   width="20"
                   height="20"
@@ -57,7 +62,7 @@ const HomePage = () => {
             <div className={styles.svgCircle}>
               <div className={styles.svgBackground}>
                 <img
-                  src="../assets/home//speed.svg"
+                  src={speedImage}
                   alt="Flexible Speed Control"
                   width="20"
                   height="20"
@@ -72,7 +77,7 @@ const HomePage = () => {
             <div className={styles.svgCircle}>
               <div className={styles.svgBackground}>
                 <img
-                  src="../assets/home//setting.svg"
+                  src={settingImage}
                   alt="Custom Margins"
                   width="20"
                   height="20"
@@ -87,7 +92,7 @@ const HomePage = () => {
             <div className={styles.svgCircle}>
               <div className={styles.svgBackground}>
                 <img
-                  src="../assets/home//theme.svg"
+                  src={themeImage}
                   alt="Multiple Themes"
                   width="20"
                   height="20"
@@ -123,7 +128,7 @@ const HomePage = () => {
           </ul>
         </div>
         <div className={styles.imageContainer}>
-          <img src="../assets/home/teleproma.png" alt="Teleprompter UI" />
+          <img src={telepromaImage} alt="Teleprompter UI" />
         </div>
       </section>
 
