@@ -2,9 +2,23 @@ import React from "react";
 import styles from "./HowItWorksPage.module.css";
 import logoImage from "../../assets/images/logo.png";
 import clipImage from "../../assets/images/clip.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 const HowItWorksPage = () => {
+  const navigate = useNavigate();
+  const demoSectionRef = React.useRef(null);
+
+  const handleGetStarted = () => {
+    navigate("/");
+  };
+
+   const handleWatchDemo = () => {
+    demoSectionRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <div className={styles.howItWorksContainer}>
       {/* Navigation */}
@@ -36,8 +50,8 @@ const HowItWorksPage = () => {
             our intuitive teleprompter for Windows, Mac, iOS, and Android.
           </p>
           <div className={styles.buttonGroup}>
-            <button className={styles.btnPrimary}>Get Started</button>
-            <button className={styles.btnOutline}>Watch Demo</button>
+            <button className={styles.btnPrimary} onClick={handleGetStarted}>Get Started</button>
+            <button className={styles.btnOutline} onClick={handleWatchDemo}>Watch Demo</button>
           </div>
         </section>
 
@@ -106,12 +120,11 @@ const HowItWorksPage = () => {
                 </p>
               </div>
             </div>
-            {/* Add the remaining 3 feature cards in the same structure */}
           </div>
         </section>
 
         {/* Demo Section */}
-        <section className={styles.demo}>
+        <section className={styles.demo} ref={demoSectionRef}>
           <h1>See It In Action</h1>
           <p>
             Experience how StreamPrompter enhances your content delivery with
