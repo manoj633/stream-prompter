@@ -387,8 +387,21 @@ function TeleprompterPage() {
 
   const handleContentChange = (e) => {
     if (contentRef.current) {
+      // Store the current cursor position
+      const selection = window.getSelection();
+      const range = selection.getRangeAt(0).cloneRange();
+
+      // Update the content state with the current HTML
       setContent(contentRef.current.innerHTML);
       contentEdited.current = true;
+
+      // After React updates the DOM, restore the cursor position
+      setTimeout(() => {
+        if (contentRef.current) {
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+      }, 0);
     }
   };
 
