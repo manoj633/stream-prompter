@@ -15,6 +15,7 @@ function TeleprompterPage() {
   const [margin, setMargin] = useState(5);
   const [speed, setSpeed] = useState(10);
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [showKeyboardShortcuts, setShowKeyboardShortcuts] = useState(false);
 
   const contentRef = useRef(null);
   const teleprompterRef = useRef(null);
@@ -35,7 +36,6 @@ function TeleprompterPage() {
     if (teleprompterRef.current) {
       const rootElement = teleprompterRef.current;
       rootElement.style.setProperty("--bg-color", bgColor);
-      rootElement.style.setProperty("--text-color", textColor);
       rootElement.style.setProperty("--text-size", `${textSize}px`);
       rootElement.style.setProperty("--margin", `${margin}%`);
       rootElement.style.setProperty("--align", alignment);
@@ -63,6 +63,101 @@ function TeleprompterPage() {
           e.preventDefault();
           setSpeed((prev) => Math.min(50, prev + 1));
           break;
+        case "ArrowLeft":
+          e.preventDefault();
+          // Decrease text size
+          setTextSize((prev) => Math.max(30, prev - 2));
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          // Increase text size
+          setTextSize((prev) => Math.min(180, prev + 2));
+          break;
+        case "KeyA":
+          e.preventDefault();
+          // Toggle text alignment
+          setAlignment((prev) => (prev === "left" ? "center" : "left"));
+          break;
+        case "KeyF":
+          e.preventDefault();
+          // Toggle horizontal flip
+          toggleFlipX();
+          break;
+        case "KeyV":
+          e.preventDefault();
+          // Toggle vertical flip
+          toggleFlipY();
+          break;
+        case "KeyM":
+          e.preventDefault();
+          // Adjust margin
+          if (e.shiftKey) {
+            setMargin((prev) => Math.min(40, prev + 1)); // Increase margin
+          } else {
+            setMargin((prev) => Math.max(0, prev - 1)); // Decrease margin
+          }
+          break;
+        case "KeyE":
+          e.preventDefault();
+          // Toggle expanded controls
+          setIsNavExpanded((prev) => {
+            const newValue = !prev;
+            if (teleprompterRef.current) {
+              if (newValue) {
+                teleprompterRef.current.classList.add(styles.noscroll);
+              } else {
+                teleprompterRef.current.classList.remove(styles.noscroll);
+              }
+            }
+            return newValue;
+          });
+          break;
+        case "KeyK":
+          e.preventDefault();
+          // Toggle keyboard shortcuts guide
+          setShowKeyboardShortcuts((prev) => !prev);
+          break;
+        case "Home":
+          e.preventDefault();
+          // Scroll to the beginning
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+          break;
+        case "End":
+          e.preventDefault();
+          // Scroll to the end
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: "smooth",
+          });
+          break;
+        case "PageUp":
+          e.preventDefault();
+          window.scrollBy({
+            top: -window.innerHeight * 0.8,
+            behavior: "smooth",
+          });
+          break;
+        case "PageDown":
+          e.preventDefault();
+          window.scrollBy({
+            top: window.innerHeight * 0.8,
+            behavior: "smooth",
+          });
+          break;
+        case "Escape":
+          e.preventDefault();
+          // Stop playback if playing
+          if (isPlaying) {
+            pause();
+          } else if (showKeyboardShortcuts) {
+            setShowKeyboardShortcuts(false);
+          }
+          break;
         default:
           break;
       }
@@ -73,7 +168,7 @@ function TeleprompterPage() {
       window.removeEventListener("keydown", handleKeyDown);
       clearTimeout(scrollTimeoutRef.current);
     };
-  }, []);
+  }, [isPlaying, showKeyboardShortcuts, isFlipX, isFlipY]); // Add dependencies for the Escape key functionality
 
   // Save changes to localStorage
   useEffect(() => {
@@ -228,12 +323,10 @@ function TeleprompterPage() {
   };
 
   const toggleFlipX = () => {
-    setIsFlipX(!isFlipX);
+    setIsFlipX((prevFlipX) => !prevFlipX);
   };
 
   const toggleFlipY = () => {
-    setIsFlipY(!isFlipY);
-
     // Calculate new scroll position for flipped view
     try {
       const currentScrollTop = window.scrollY;
@@ -247,13 +340,22 @@ function TeleprompterPage() {
         const newScrollTop =
           (invertedScrollPercentage / 100) * totalScrollableHeight;
 
+        // Toggle the flip state first
+        setIsFlipY((prevFlipY) => !prevFlipY);
+
+        // Then update the scroll position
         window.scrollTo({
           top: newScrollTop,
           behavior: "smooth",
         });
+      } else {
+        // If there's no scrollable height, just toggle the state
+        setIsFlipY((prevFlipY) => !prevFlipY);
       }
     } catch (error) {
       console.error("Error calculating scroll position:", error);
+      // Even if there's an error, make sure to toggle the state
+      setIsFlipY((prevFlipY) => !prevFlipY);
       window.scrollTo(0, 0);
     }
   };
@@ -337,7 +439,7 @@ function TeleprompterPage() {
           <button
             id="align"
             className={styles.controlButton}
-            title="Align text left / center"
+            title="Align text left / center [A]"
             onClick={() =>
               setAlignment((prev) => (prev === "left" ? "center" : "left"))
             }
@@ -368,7 +470,7 @@ function TeleprompterPage() {
           <button
             id="flipx"
             className={styles.controlButton}
-            title="Mirror text horizontally"
+            title="Mirror text horizontally [F]"
             onClick={toggleFlipX}
           >
             <svg
@@ -385,7 +487,7 @@ function TeleprompterPage() {
           <button
             id="flipy"
             className={styles.controlButton}
-            title="Mirror text vertically"
+            title="Mirror text vertically [V]"
             onClick={toggleFlipY}
           >
             <svg
@@ -402,7 +504,7 @@ function TeleprompterPage() {
           <button
             className={`${styles.expand} ${styles.controlButton}`}
             id="expand"
-            title="Expand Controls"
+            title="Expand Controls [E]"
             onClick={() => {
               setIsNavExpanded(!isNavExpanded);
               if (teleprompterRef.current) {
@@ -417,6 +519,22 @@ function TeleprompterPage() {
               viewBox="0 0 40 40"
             >
               <path d="m20 25.625-10-10 1.958-1.958L20 21.708l8.042-8.041 1.958 2Z" />
+            </svg>
+          </button>
+
+          <button
+            className={styles.controlButton}
+            id="keyboard-shortcuts"
+            title="Keyboard Shortcuts [K]"
+            onClick={() => setShowKeyboardShortcuts(!showKeyboardShortcuts)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="40"
+              width="40"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z" />
             </svg>
           </button>
 
@@ -495,8 +613,8 @@ function TeleprompterPage() {
 
         <div
           className={`${styles.content} 
-            ${isFlipX ? styles.flipx : ""} 
-            ${isFlipY ? styles.flipy : ""}`}
+    ${isFlipX ? styles.flipx : ""} 
+    ${isFlipY ? styles.flipy : ""}`}
           ref={contentRef}
           spellCheck="false"
           contentEditable={!isPlaying}
@@ -505,7 +623,8 @@ function TeleprompterPage() {
           dangerouslySetInnerHTML={renderContent()}
           style={{
             textAlign: alignment,
-            opacity: isPlaying ? 1 : 0.9, // Slightly dim when editing
+            opacity: isPlaying ? 1 : 0.9,
+            color: textColor, // Apply text color directly here
           }}
         ></div>
 
@@ -517,6 +636,106 @@ function TeleprompterPage() {
             display: isPlaying && content.trim() ? "block" : "none",
           }}
         ></div>
+
+        {showKeyboardShortcuts && (
+          <div className={styles.keyboardShortcutsModal}>
+            <div className={styles.keyboardShortcutsContent}>
+              <h3>Keyboard Shortcuts</h3>
+              <div className={styles.shortcutsList}>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>Space</span>
+                  <span className={styles.shortcutDesc}>Play/Pause</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>↑</span>
+                  <span className={styles.shortcutDesc}>Increase speed</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>↓</span>
+                  <span className={styles.shortcutDesc}>Decrease speed</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>→</span>
+                  <span className={styles.shortcutDesc}>
+                    Increase text size
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>←</span>
+                  <span className={styles.shortcutDesc}>
+                    Decrease text size
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>A</span>
+                  <span className={styles.shortcutDesc}>
+                    Toggle text alignment
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>F</span>
+                  <span className={styles.shortcutDesc}>
+                    Toggle horizontal flip
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>V</span>
+                  <span className={styles.shortcutDesc}>
+                    Toggle vertical flip
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>M</span>
+                  <span className={styles.shortcutDesc}>Decrease margin</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>Shift + M</span>
+                  <span className={styles.shortcutDesc}>Increase margin</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>E</span>
+                  <span className={styles.shortcutDesc}>
+                    Toggle control panel
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>K</span>
+                  <span className={styles.shortcutDesc}>
+                    Toggle this shortcuts guide
+                  </span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>Home</span>
+                  <span className={styles.shortcutDesc}>Go to beginning</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>End</span>
+                  <span className={styles.shortcutDesc}>Go to end</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>Page Up</span>
+                  <span className={styles.shortcutDesc}>Scroll up</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>Page Down</span>
+                  <span className={styles.shortcutDesc}>Scroll down</span>
+                </div>
+                <div className={styles.shortcutItem}>
+                  <span className={styles.shortcutKey}>Esc</span>
+                  <span className={styles.shortcutDesc}>
+                    Stop playback / Close this guide
+                  </span>
+                </div>
+              </div>
+              <button
+                className={styles.closeShortcutsButton}
+                onClick={() => setShowKeyboardShortcuts(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
