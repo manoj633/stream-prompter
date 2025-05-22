@@ -771,13 +771,7 @@
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.formInputGroup:hover {
-    box-shadow: 0 8px 20px rgba(112, 71, 235, 0.1);
-    transform: translateY(-2px);
 }
 
 .signupForm input[type="email"] {
@@ -786,7 +780,7 @@
     font-size: clamp(0.9rem, 2vw, 16px);
     border: none;
     outline: none;
-    border-radius: 8px 0 0 8px;
+    border-radius: 8px;
     margin-right: clamp(10px, 2vw, 18px);
     transition: all 0.3s ease;
 }
@@ -807,12 +801,6 @@
     transition: all 0.3s ease, transform 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.signupForm button:hover {
-    background: linear-gradient(to right, #5a3ef0, #1b99f0);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(106, 78, 255, 0.3);
 }
 
 .signupForm button:active {

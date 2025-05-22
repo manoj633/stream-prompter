@@ -680,14 +680,9 @@
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: box-shadow var(--transition-speed) ease;
 }
 
-.formInputGroup:hover,
-.formInputGroup:focus-within {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
 
 .signupForm input[type="email"] {
     flex: 1;
@@ -701,7 +696,7 @@
 }
 
 .signupForm input[type="email"]:focus {
-    background-color: #f8f9fa;
+    box-shadow: inset 0 0 0 2px var(--brand-purple-light);
 }
 
 .signupForm button {
@@ -717,12 +712,6 @@
         box-shadow var(--transition-speed) ease,
         background var(--transition-speed) ease;
     box-shadow: 0 4px 10px rgba(107, 78, 255, 0.2);
-}
-
-.signupForm button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(107, 78, 255, 0.3);
-    background: linear-gradient(to right, #5c43e6, #1f9def);
 }
 
 .signupForm button:active {
