@@ -153,6 +153,8 @@
     padding: 2px 2px 2px 2px;
     cursor: pointer;
     padding: 0;
+    border: 3px solid var(--text-color);
+    border-radius: 50%;
 }
 
 .teleprompterRoot input[type="color"]::-webkit-color-swatch-wrapper {
