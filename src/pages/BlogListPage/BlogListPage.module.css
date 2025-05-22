@@ -241,20 +241,10 @@
     align-items: center;
     font-size: clamp(16px, 2vw, 18px);
     color: #000000;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
 }
 
 .logo img {
     margin-right: 8px;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover img {
-    transform: rotate(10deg);
 }
 
 .nav {

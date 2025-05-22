@@ -152,20 +152,11 @@
     align-items: center;
     font-size: 18px;
     color: #000000;
-    transition: transform var(--transition-speed) ease;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-}
 
 .logo img {
     margin-right: 8px;
-    transition: transform var(--transition-speed) ease;
-}
-
-.logo:hover img {
-    transform: rotate(10deg);
 }
 
 .nav {
