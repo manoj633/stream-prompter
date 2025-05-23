@@ -10,3 +10,15 @@ body {
     padding: 0;
     display: block;
 }
+
+/* Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* IE and Edge */
+body {
+    -ms-overflow-style: none;
+}
